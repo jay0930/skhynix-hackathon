@@ -6,7 +6,7 @@ description: Implement an authorized specification in small behavior-tested incr
 
 Apply the kit AGENTS.md and actual task rules first. Require confirmed direction and
 explicit implementation authorization; an earlier clear authorization remains valid.
-Read the current REQUIREMENTS, TASKS, decisions, baseline tests, and code before editing.
+Read the current REQUIREMENTS, TASKS, QUESTIONS, decisions, baseline tests, and code before editing.
 Read ponytail/SKILL.md from the sibling directory for minimum complete changes.
 This workflow selectively adapts Superpowers TDD, debugging, and verification ideas;
 it does not activate upstream plugins. See [NOTICE](../../../third-party/NOTICE.md).
@@ -42,4 +42,12 @@ No subagent tool means sequential implementation and a separate review pass.
 
 Do not silently add scope or paid/external services. If a task is blocked, record
 which acceptance criterion is blocked and continue independent permitted work.
+Route missing business facts to Type 1 / CTX in QUESTIONS, with a question for Jay to
+send to the Bot. Route consequential implementation choices requiring Jay to Type 2
+/ BLD, with options, user-visible impact, and a recommendation. Do not ask Jay to
+resolve routine technical details or repeat an existing approval. Do not treat a
+missing answer as consent.
+Record actual answers with sources, distinguish interpretation, and apply confirmed
+facts/choices to relevant documents and tasks. Update TECHNICAL_BRIEF and verification
+when affected; mark an answer applied only after the indicated changes are made.
 Before finishing, use delivery-review; never auto-push, deploy, or submit in EXAM.

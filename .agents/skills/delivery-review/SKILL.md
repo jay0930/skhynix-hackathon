@@ -31,6 +31,12 @@ Update VERIFICATION with command/results/coverage limits, TASKS with actual stat
 and DECISIONS with meaningful changes. Explain the problem solved, key design choices,
 what was tested, and known limits in plain Korean before the essay stage.
 
+Read QUESTIONS before handoff. Verify that resolved answers have source evidence
+and the stated changes were actually applied; an answered question is not a completed
+implementation. Check related tasks, decisions, tests, and TECHNICAL_BRIEF. Report
+remaining context gaps, builder choices, conflicts, and blocked requirements honestly.
+Do not close unanswered questions by assumption or mark them approved on Jay's behalf.
+
 Reconcile TECHNICAL_BRIEF with the final deliverable using the kit's
 templates/TECHNICAL_BRIEF.md. Inventory all submission files, including configuration,
 data definitions, formulas in notebooks/spreadsheets, prompts, documents, and tests,

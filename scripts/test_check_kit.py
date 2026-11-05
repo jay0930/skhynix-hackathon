@@ -24,7 +24,7 @@ class KitValidationTests(unittest.TestCase):
         self.assertEqual(validate(self.root), [])
 
     def test_missing_required_template_is_rejected(self) -> None:
-        for name in ("PRD", "TECHNICAL_BRIEF"):
+        for name in ("PRD", "TECHNICAL_BRIEF", "QUESTIONS"):
             with self.subTest(template=name):
                 path: Path = self.root / f"templates/{name}.md"
                 original: str = path.read_text()

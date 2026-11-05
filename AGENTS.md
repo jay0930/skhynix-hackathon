@@ -74,6 +74,27 @@ Do not edit template source files as if they were the assignment's live document
 
 ## SDD, TDD, and coordination
 Here SDD means spec-driven development, not subagent-driven development.
+Maintain QUESTIONS in the assignment workspace using templates/QUESTIONS.md. Read it
+before asking and on resume. Check task materials, code, and previous answers first.
+- Type 1 / CTX: missing problem-context facts (business meaning, data definitions,
+  constraints, evaluation criteria) go to the platform problem-owner Bot. Usually
+  discovered during joint framing; classify by the needed authority, not just phase.
+  Draft the question for Jay to send through the permitted platform messenger; do
+  not contact external services or claim a message/answer exists without evidence.
+- Type 2 / BLD: implementation uncertainties requiring builder judgment go to Jay:
+  scope, priority, user-visible behavior, or consequential tradeoffs. Explain options,
+  effects, and a recommendation. Resolve discoverable technical facts and delegated
+  routine technical decisions yourself; do not turn every uncertainty into approval.
+Split mixed fact/choice questions into linked records; establish context first.
+Track ID, question, checked sources, reason, owner/type, priority, affected requirement
+and task, blocking impact, actual send/answer evidence, interpretation, status, and
+applied changes. Ask the next important question, not the entire ledger at once.
+An unanswered question grants no approval. Pause only dependent work; continue
+independent tasks without inventing business facts or making choices reserved for Jay.
+An answer is not implementation: apply it to relevant PRD/REQUIREMENTS/DECISIONS/TASKS,
+and update VERIFICATION/TECHNICAL_BRIEF where affected before marking it applied.
+Preserve conflicting/superseded answers, reopen when needed, and report unresolved
+questions at handoff. No duplicate approvals for an already settled decision.
 Use PRD for intent and scope, TRD for technical decisions, and REQUIREMENTS for the
 current implementation contract. Link requirement IDs to acceptance checks and tests.
 Use TASKS for progress, DECISIONS for rationale, VERIFICATION for actual evidence.

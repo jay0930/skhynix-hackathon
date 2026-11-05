@@ -16,6 +16,14 @@ Briefly distinguish what the user said from your interpretation, then ask the si
 question whose answer would most change the problem framing or priority.
 Do not ask questions already answered by the draft or available environment.
 
+Use the assignment's QUESTIONS.md (kit template templates/QUESTIONS.md) for important
+unresolved context and builder decisions. Recording a question is allowed during
+discussion; it does not approve a direction, create a PRD, or start implementation.
+Missing business facts are Type 1 / CTX for the problem-owner Bot: draft a concise
+question for Jay to send in the platform. Do not pretend Jay's preference establishes
+a task fact. If later implementation choices need Jay's judgment, use Type 2 / BLD.
+Read existing answers before asking; discuss only the next important question.
+
 ## Think together
 Build each next question on the user's last answer. Do not run a fixed interview,
 ask a questionnaire, offer answer menus by default, or front-load a complete solution.

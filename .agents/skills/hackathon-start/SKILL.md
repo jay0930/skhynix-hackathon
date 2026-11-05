@@ -15,14 +15,17 @@ Record observed facts separately from technical choices and unresolved questions
 
 Before implementing a behavior, establish its input/source, the user's intended
 observable result, and its required acceptance condition from task evidence or the
-user. If a missing business fact prevents those, ask one focused blocking question
-and record the affected task as blocked; do not invent data access or product scope.
+user. If a missing business fact prevents those, record a Type 1 / CTX question in
+QUESTIONS and draft it for Jay to send to the problem-owner Bot. If the gap is a
+builder choice, record Type 2 / BLD and ask Jay. Record only the affected task as
+blocked; do not invent data access or product scope.
 Continue independent permitted checks. Technical details inferable from code are not
 questions for the user.
 
 If the user supplies a draft to discuss, use idea-partner before proposing a solution.
 For missing business context, prepare concise questions for the platform's business
-agent; Jay uses the platform messenger. Do not invoke external people or sessions.
+agent; Jay uses the platform messenger. Record actual answers and sources in QUESTIONS,
+separately from interpretation. Do not invoke external people or sessions.
 Do not ask Jay technical questions that the environment can answer.
 
 Propose a minimal scope and priorities against actual acceptance conditions. If the
@@ -38,6 +41,8 @@ documents. Actual task-required filenames override this default.
 - TASKS: small ordered tasks with one owner and current status.
 - DECISIONS: meaningful choices and reasons, not every routine edit.
 - VERIFICATION: baseline commands/results and pending checks.
+- QUESTIONS: Type 1 / CTX context facts for the Bot and Type 2 / BLD implementation
+  choices for Jay; read existing answers before asking and link affected tasks.
 - TECHNICAL_BRIEF: a plain-Korean explanation of the implementation for Jay. Read
   templates/TECHNICAL_BRIEF.md from the kit; create it in the assignment workspace
   once technical decisions exist, not as invented specifications during ideation.

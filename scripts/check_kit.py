@@ -14,7 +14,7 @@ SKILLS: tuple[str, ...] = (
     "idea-partner", "hackathon-start", "tdd-delivery", "delivery-review", "ponytail",
 )
 TEMPLATES: tuple[str, ...] = (
-    "PRD", "REQUIREMENTS", "TRD", "TASKS", "DECISIONS", "VERIFICATION", "TECHNICAL_BRIEF",
+    "PRD", "REQUIREMENTS", "TRD", "TASKS", "DECISIONS", "VERIFICATION", "TECHNICAL_BRIEF", "QUESTIONS",
 )
 REQUIRED: tuple[str, ...] = (
     "README.md", "AGENTS.md", ".gitignore", "third-party/NOTICE.md",
