@@ -38,6 +38,9 @@ documents. Actual task-required filenames override this default.
 - TASKS: small ordered tasks with one owner and current status.
 - DECISIONS: meaningful choices and reasons, not every routine edit.
 - VERIFICATION: baseline commands/results and pending checks.
+- TECHNICAL_BRIEF: a plain-Korean explanation of the implementation for Jay. Read
+  templates/TECHNICAL_BRIEF.md from the kit; create it in the assignment workspace
+  once technical decisions exist, not as invented specifications during ideation.
 
 Link requirement IDs across documents and tests. A database or API section may be
 not applicable; never create infrastructure to fill a template. Explain the important

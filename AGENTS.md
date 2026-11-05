@@ -77,6 +77,21 @@ Here SDD means spec-driven development, not subagent-driven development.
 Use PRD for intent and scope, TRD for technical decisions, and REQUIREMENTS for the
 current implementation contract. Link requirement IDs to acceptance checks and tests.
 Use TASKS for progress, DECISIONS for rationale, VERIFICATION for actual evidence.
+Maintain TECHNICAL_BRIEF in the assignment workspace using the kit template. It is a
+plain-Korean explanation of the actual implementation for Jay, not an essay answer.
+Update it after material formula/design changes and reconcile it before submission.
+Inventory all submission files, then inspect relevant source, configuration, data
+definitions, prompts, documents, and tests. Record exclusions and unreadable artifacts;
+never claim full review when only part of the deliverable was inspected. Do not copy
+secrets or personal data. Inspect binary/generated artifacts only as needed and
+permitted; record their role and unverified content.
+Explain important formulas, units, constants, branching, edge cases, technical choices,
+worked examples, limits, and file/symbol/test references. Separate observed behavior
+from recorded decision reasons; missing rationale is unknown, not a story to invent.
+Use reproducible outputs for examples and label unexecuted checks. Current code
+determines implemented behavior; surface contradictions rather than changing code to
+fit the explanation. Do not fabricate considered alternatives or user comprehension.
+Discuss the brief during implementation/review only; stop when follow-up essays begin.
 Fill only relevant sections; mark others not applicable with a reason. No invented
 performance targets, stack versions, APIs, or databases to complete a template.
 Use failed behavior tests before non-trivial implementation or bug fixes. Keep tests

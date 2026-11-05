@@ -24,8 +24,15 @@ class KitValidationTests(unittest.TestCase):
         self.assertEqual(validate(self.root), [])
 
     def test_missing_required_template_is_rejected(self) -> None:
-        (self.root / "templates/PRD.md").unlink()
-        self.assertTrue(any("templates/PRD.md" in error for error in validate(self.root)))
+        for name in ("PRD", "TECHNICAL_BRIEF"):
+            with self.subTest(template=name):
+                path: Path = self.root / f"templates/{name}.md"
+                original: str = path.read_text()
+                path.unlink()
+                try:
+                    self.assertTrue(any(f"templates/{name}.md" in error for error in validate(self.root)))
+                finally:
+                    path.write_text(original)
 
     def test_broken_relative_document_link_is_rejected(self) -> None:
         with (self.root / "README.md").open("a") as stream:

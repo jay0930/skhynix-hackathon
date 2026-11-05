@@ -18,6 +18,11 @@ it does not activate upstream plugins. See [NOTICE](../../../third-party/NOTICE.
 4. Implement the smallest complete change, including affected callers and error handling.
 5. Run the test, then relevant existing tests. Refactor only while behavior stays green.
 6. Update TASKS and VERIFICATION with the actual command, result, and remaining limits.
+   After material formula or technical changes, update the assignment's
+   TECHNICAL_BRIEF from the kit template: actual inputs/units, processing order,
+   recorded reasons, a reproducible example, edge cases, and source/test references.
+   Mark missing reasons unknown; do not infer intent from code as a recorded choice.
+   Explain the important changes briefly in Korean.
 
 Bug fixes start with a reproduction and a regression test when feasible. Inspect the
 error, recent changes, and data flow; test one root-cause hypothesis at a time. Repeated

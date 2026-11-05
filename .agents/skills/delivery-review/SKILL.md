@@ -31,6 +31,19 @@ Update VERIFICATION with command/results/coverage limits, TASKS with actual stat
 and DECISIONS with meaningful changes. Explain the problem solved, key design choices,
 what was tested, and known limits in plain Korean before the essay stage.
 
+Reconcile TECHNICAL_BRIEF with the final deliverable using the kit's
+templates/TECHNICAL_BRIEF.md. Inventory all submission files, including configuration,
+data definitions, formulas in notebooks/spreadsheets, prompts, documents, and tests,
+not just changed code. Inspect relevant material with permitted local tools; record
+exclusions, generated files, unreadable artifacts, and gaps without exposing secrets.
+Explain calculations step by step with units, actual constants, preprocessing,
+rounding, branching, edge cases, and file/symbol/test references. Reproduce a small
+non-sensitive example where feasible. Label unexecuted examples and unknown rationale;
+do not invent reasons, compared alternatives, or verification. Highlight code/doc
+discrepancies and limits. Explain the main decisions to Jay before final submission;
+do not mark understanding confirmed without Jay's response. This is implementation
+documentation, not predicted essay Q&A; stop assistance once follow-up essays begin.
+
 Check actual required filenames, paths, saved state, and unintended files; do not
 assume hidden files or /tmp are excluded from submission. The participant handles the
 platform preview, final confirmation, and completion-screen verification manually.
