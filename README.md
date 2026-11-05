@@ -7,7 +7,7 @@
 아래 명령은 개인 PC가 아니라 **시험 플랫폼 안의 터미널**에서 실행합니다. 기존 과제 폴더는 그대로 두고, 참고 키트만 임시 경로에 내려받습니다. `/tmp` 사용이 허용되는지는 사전 체험에서 확인하세요. [confidence: medium]
 
 ```bash
-git clone https://github.com/jay0930/skhynix-hackathon.git /tmp/sk-hynix-kit
+git clone https://github.com/jay0930/skhynix-hackathon.git /tmp/sk-hynix-kit-v2
 ```
 
 파일을 복사·업로드하거나 GitHub에 로그인할 필요가 없는 공개 저장소 주소입니다. Clone(저장소 내려받기)은 준비 자료를 가져오는 동작이며, 시험 결과를 보내는 Push와 다릅니다. [confidence: high]
@@ -15,31 +15,48 @@ git clone https://github.com/jay0930/skhynix-hackathon.git /tmp/sk-hynix-kit
 다운로드 확인:
 
 ```bash
-git -C /tmp/sk-hynix-kit remote get-url origin
-git -C /tmp/sk-hynix-kit rev-parse HEAD
-ls -a /tmp/sk-hynix-kit
+git -C /tmp/sk-hynix-kit-v2 remote get-url origin
+git -C /tmp/sk-hynix-kit-v2 rev-parse HEAD
+ls -a /tmp/sk-hynix-kit-v2
 ```
 
 `origin`이 위 저장소이고 `README.md`, `AGENTS.md`, `templates/`, `.agents/`가 있는지 확인합니다. 기존 과제의 작업 위치에서 제공된 Codex를 사용하고, 작업 디렉터리를 키트 폴더로 바꾸지 않습니다. Clone만으로 Skill이 자동 설치되지는 않습니다. [confidence: high]
 
 ### Codex에 넣을 시작 요청
 
-```text
-/tmp/sk-hynix-kit/README.md와 AGENTS.md를 읽어주세요.
-필요한 Skill은 준비 키트의 .agents/skills/ 경로에서 직접 읽어 적용해주세요.
-시험 단계로 취급하고 실제 과제 지침을 우선해주세요.
-기존 과제 지침·파일·플랫폼 설정을 덮어쓰지 마세요.
+일반 터미널에서 기존 과제 폴더의 Codex를 실행한 뒤, **Codex 입력창**에 아래 요청문을 붙여넣습니다. 이미 Codex가 실행 중이면 그대로 사용합니다. 다른 다운로드 경로를 사용했다면 요청문의 경로도 함께 바꿉니다. [confidence: high]
 
-먼저 현재 과제의 README, 제출 조건, 기존 코드와 실행 환경을 확인해주세요.
+```text
+/tmp/sk-hynix-kit-v2/README.md와 AGENTS.md를 읽고 적용해주세요.
+필요한 Skill은 해당 키트의 .agents/skills/ 경로에서 직접 읽어주세요.
+시험 단계로 취급하고 실제 과제 지침을 우선하며,
+기존 과제 지침·파일·플랫폼 설정을 보존해주세요.
+
+실제 과제 작업 공간의 docs/hackathon/에 다음 문서를 유지해주세요.
+과제에서 지정한 문서 경로가 있다면 그것을 우선해주세요.
+키트의 templates/ 양식을 참고하고 기존 문서는 확인 후 보완해주세요.
+
+1. QUESTIONS.md
+- 문제 담당자 Bot에게 확인할 업무 맥락은 종류 1(CTX).
+- 구현 중 Jay의 선택이 필요한 불확실성은 종류 2(BLD).
+- 질문 이유·관련 작업·답변 출처·실제 반영 상태를 기록해주세요.
+- Bot에게 보낼 질문은 제가 직접 전달할 수 있도록 정리해주세요.
+- 이미 답한 질문은 반복하지 말고, 중요한 질문부터 하나씩 제시해주세요.
+
+2. TECHNICAL_BRIEF.md
+- 핵심 계산식·단위·숫자 예시·기술 선택 이유·한계를 쉽게 설명해주세요.
+- 실제 코드·설정·테스트와 연결하고, 중요한 변경 후 갱신해주세요.
+- 기록에 없는 선택 이유와 실행하지 않은 검증 결과는 만들어내지 마세요.
+- 제출 전에는 최종 파일과 대조하고 미확인 범위를 명시해주세요.
+
+먼저 과제의 README·제출 조건·기존 코드·실행 환경과 현재 진행 상태를 확인해주세요.
 제가 초안을 제공하면 idea-partner로 함께 검토해주세요.
+방향과 구현을 이미 승인한 부분은 이어서 진행하고,
+새로운 방향 결정이 필요한 부분만 질문해주세요.
 제가 방향을 확정하고 구현을 요청하면 명세→테스트→구현→검증을 진행해주세요.
-기술 선택은 확인한 환경 안에서 판단하고, 중요한 이유와 한계만 설명해주세요.
+기술 선택은 확인한 환경 안에서 판단하고 중요한 이유와 한계만 설명해주세요.
 에이전트 분담이 미지원이면 단일 Codex로 진행해주세요.
 문서는 과제 작업 공간에 작성하고 준비 키트 자체를 수정하지 마세요.
-QUESTIONS.md에 Bot에게 확인할 업무 맥락과 Jay에게 확인할 구현 선택을 구분해 기록하고,
-실제 답변과 그 답변을 명세·코드에 반영한 상태를 따로 추적해주세요.
-구현 중에는 TECHNICAL_BRIEF.md에 핵심 계산·기술 선택을 쉬운 한국어로 갱신하고,
-제출 전에는 최종 코드·설정·데이터 정의·문서·테스트와 대조해주세요.
 ```
 
 이미 구현 방향과 실행을 승인했다면 그 사실을 함께 알려주면 됩니다. 같은 승인을 반복해서 받을 필요는 없습니다. [confidence: medium]
@@ -60,7 +77,7 @@ QUESTIONS.md에 Bot에게 확인할 업무 맥락과 Jay에게 확인할 구현 
 아직 방향을 확정하지 않았다면 다음 요청을 사용합니다.
 
 ```text
-/tmp/sk-hynix-kit/.agents/skills/idea-partner/SKILL.md를 읽고 적용해주세요.
+/tmp/sk-hynix-kit-v2/.agents/skills/idea-partner/SKILL.md를 읽고 적용해주세요.
 아래 초안을 함께 검토해주세요. 먼저 이해한 내용을 짧게 확인하고,
 가장 중요한 질문을 하나씩 해주세요. 약한 전제나 놓친 점은 지적하되
 해결책을 먼저 확정하지 마세요. 대안이 필요하면 요청하겠습니다.
@@ -107,7 +124,7 @@ SDD(명세 주도 개발)는 요구사항을 먼저 정하는 방식이고, TDD(
 위 문안은 분류 예시이며 실제 과제 사실이나 이미 확정된 선택이 아닙니다. 과제 자료·코드로 답을 찾을 수 있는 질문과 AI가 위임받은 일상적인 기술 판단은 먼저 자체 해결하도록 지침을 구성했습니다. [confidence: high]
 
 ```text
-/tmp/sk-hynix-kit/templates/QUESTIONS.md를 참고해,
+/tmp/sk-hynix-kit-v2/templates/QUESTIONS.md를 참고해,
 과제 작업 공간의 docs/hackathon/QUESTIONS.md를 유지해주세요.
 문제 담당자 Bot에게 확인할 업무 맥락은 종류 1(CTX),
 구현 중 제가 결정해야 하는 불확실한 선택은 종류 2(BLD)로 구분해주세요.
@@ -127,7 +144,7 @@ Bot에게 보낼 문안은 제가 플랫폼에서 직접 전달할 수 있도록
 구현·검증 단계에서 제공 Codex에 다음처럼 요청합니다.
 
 ```text
-/tmp/sk-hynix-kit/templates/TECHNICAL_BRIEF.md를 참고해,
+/tmp/sk-hynix-kit-v2/templates/TECHNICAL_BRIEF.md를 참고해,
 과제 작업 공간의 docs/hackathon/TECHNICAL_BRIEF.md를 작성·갱신해주세요.
 기존 과제에서 문서 경로를 지정했다면 그 경로를 우선해주세요.
 
@@ -150,7 +167,7 @@ Bot에게 보낼 문안은 제가 플랫폼에서 직접 전달할 수 있도록
 
 ## 준비 키트 자체 검사
 
-아래 명령은 준비 키트 폴더에서 Python 3.9 이상으로 실행합니다. 추가 패키지는 필요하지 않습니다. 시험 환경에서 키트만 검사하려면 작업 위치를 바꾸지 않고 `python3 /tmp/sk-hynix-kit/scripts/check_kit.py`를 사용할 수 있습니다. [confidence: high]
+아래 명령은 준비 키트 폴더에서 Python 3.9 이상으로 실행합니다. 추가 패키지는 필요하지 않습니다. 시험 환경에서 키트만 검사하려면 작업 위치를 바꾸지 않고 `python3 /tmp/sk-hynix-kit-v2/scripts/check_kit.py`를 사용할 수 있습니다. [confidence: high]
 
 ```bash
 python3 scripts/check_kit.py
